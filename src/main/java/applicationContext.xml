@@ -16,9 +16,11 @@
     <!-- Define your beans here -->
     
     <!-- define the dependency -->
-    
+    <bean id="myFortune" class="com.molinari.springdemo.HappyFortuneService"></bean>
  	<bean id="myCoach"
- 		class="com.molinari.springdemo.BasketballCoach">	 		
+ 		class="com.molinari.springdemo.BasketballCoach">	
+ 		<!-- setup constructor injection -->
+ 		<constructor-arg ref="myFortune"></constructor-arg> 		
  	</bean>
 
 
