@@ -23,9 +23,12 @@
  		<constructor-arg ref="myFortuneService"></constructor-arg> 		
  	</bean>
  	
- 	<bean id="myCricketCoach" class="com.molinari.springdemo.CriketCoach">
+ 	<bean id="myCricketCoach" class="com.molinari.springdemo.CricketCoach">
  		<!-- setter injection -->
  		<property name="fortuneService" ref="myFortuneService"></property>
+ 		 <property name="emailAddress" value="test@test.it"></property>
+ 		 <property name="team" value="BestCricketTeam"></property>
+ 
  	</bean>
  	
  	
