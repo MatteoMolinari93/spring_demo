@@ -6,6 +6,9 @@
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    <!--  load properties file -->
+    <context:property-placeholder location="classpath:sport.properties"/>
 
 	<!-- spring logger configuration  --> 
  	<bean id="myLoggerConfig" class="com.molinari.springdemo.MyLoggerConfig" init-method="initLogger">
@@ -16,7 +19,7 @@
     <!-- Define your beans here -->
     
     <!-- define the dependency -->
-    <bean id="myFortuneService" class="com.molinari.springdemo.HappyFortuneService"></bean>
+    <bean id="myFortuneService" class="com.molinari.springdemo.RandomFortuneService"></bean>
  	<bean id="myCoach"
  		class="com.molinari.springdemo.BasketballCoach">	
  		<!-- setup constructor injection -->
@@ -26,8 +29,8 @@
  	<bean id="myCricketCoach" class="com.molinari.springdemo.CricketCoach">
  		<!-- setter injection -->
  		<property name="fortuneService" ref="myFortuneService"></property>
- 		 <property name="emailAddress" value="test@test.it"></property>
- 		 <property name="team" value="BestCricketTeam"></property>
+ 		 <property name="emailAddress" value="${foo.email}"></property>
+ 		 <property name="team" value="${foo.team}"></property>
  
  	</bean>
  	
