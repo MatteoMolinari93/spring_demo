@@ -13,8 +13,15 @@ public class TrackCoach implements Coach {
 	}
 
 	public String getDailyFortune() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.fortuneService.getFortune();
+	}
+	
+	public void onInit() {
+		System.out.println("TrackCoach: onInit");
+	}
+	
+	public void onDestroy() {
+		System.out.println("TrackCoach: onDestroy");
 	}
 
 }

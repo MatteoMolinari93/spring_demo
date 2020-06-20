@@ -2,7 +2,7 @@ package com.molinari.springdemo;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class BeanScopeDemo {
+public class BeanScopeDemoApp {
 
 	public static void main(String[] args) {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beanScope-applicationContext.xml");
